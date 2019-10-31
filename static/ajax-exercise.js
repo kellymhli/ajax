@@ -28,6 +28,9 @@ function showWeather(evt) {
 
 
     // TODO: request weather with that URL and show the forecast in #weather-info
+    $.get(url, formData, (res) => {
+      $('#weather-info').html(res['forecast'])
+    });
 }
 
 $("#weather-form").on('submit', showWeather);
